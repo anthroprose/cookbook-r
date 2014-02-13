@@ -25,7 +25,13 @@ major_version = r_version.split(".").first
 # Command to check if we should be installing R or not.
 is_installed_command = "R --version | grep -q #{r_version}"
 
-package "gcc-gfortran"
+case node['platform']
+when 'ubuntu'
+  package "gfortran"
+else
+  package "gcc-gfortran"
+end
+
 
 include_recipe "build-essential"
 include_recipe "ark"
