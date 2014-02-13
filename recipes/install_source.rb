@@ -28,6 +28,7 @@ is_installed_command = "R --version | grep -q #{r_version}"
 case node['platform']
 when 'ubuntu'
   package "gfortran"
+  package "libreadline-dev"
 else
   package "gcc-gfortran"
 end
