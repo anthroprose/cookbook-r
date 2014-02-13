@@ -29,6 +29,7 @@ case node['platform']
 when 'ubuntu'
   package "gfortran"
   package "libreadline-dev"
+  package "xorg-dev"
 else
   package "gcc-gfortran"
 end
